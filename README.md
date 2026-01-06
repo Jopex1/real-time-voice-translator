@@ -58,7 +58,7 @@ Key goals:
 
 1. **Clone the repo**
 ```bash
-git clone https://code.swecha.org/RakeshGajula/real-time-voice-translator
+git https://github.com/RakeshBabuGajula/real-time-voice-translator
 cd linguasync
 ```
 
@@ -191,11 +191,7 @@ This project is released under the AGPLv3 License — see LICENSE for details.
 
 ## 👥 Authors & Acknowledgements
 
-Team member 1: Rakesh Babu Gajula
-Team member 2: Raheem
-Team member 3: Gopal Landa
-Team member 4: Charan 
-Team member 5: Mukunda
+
 
 
 Original idea and internship: Viswam.ai / Swecha (Summer of AI 2025)
@@ -204,6 +200,6 @@ Libraries & models: SpeechRecognition, deep-translator, gTTS, Streamlit
 
 ---
 
-## 📺 Demo & Report
+## 📺 Demo 
+https://youtu.be/WB1wDMpseBg?si=eWcA9bIFdnNJYJWp
 
-REPORT.md contains the full project report, testing methodology, and user feedback summary.
